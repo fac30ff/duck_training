@@ -1,5 +1,6 @@
 package com.globallogic.training.ducker.pojo;
 
+import com.globallogic.training.ducker.exception.CannotProccedNewState;
 import com.globallogic.training.ducker.pojo.decorator.DuckInterface;
 import com.globallogic.training.ducker.pojo.state.DuckState;
 
@@ -20,8 +21,8 @@ public class Duck implements Cloneable, DuckInterface {
         return duckState;
     }
 
-    public void setDuckState(DuckState duckState) {
-        this.duckState = duckState;
+    public void setDuckState(DuckState duckState) throws CannotProccedNewState {
+        this.duckState.setDuckState(duckState);
     }
 
     public int getAge() {

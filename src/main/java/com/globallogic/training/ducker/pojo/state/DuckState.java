@@ -7,7 +7,7 @@ import java.util.EnumSet;
 public enum DuckState implements State{
     Sleeping{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -22,7 +22,7 @@ public enum DuckState implements State{
     },
     Flying{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -37,7 +37,7 @@ public enum DuckState implements State{
     },
     Running{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -52,7 +52,7 @@ public enum DuckState implements State{
     },
     Walking{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -67,7 +67,7 @@ public enum DuckState implements State{
     },
     Swimming{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -82,7 +82,7 @@ public enum DuckState implements State{
     },
     Eating{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -97,7 +97,7 @@ public enum DuckState implements State{
     },
     Standing{
         @Override
-        DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
+        public DuckState setDuckState(DuckState duckState) throws CannotProccedNewState {
             if(possibilityToChangeState(possibleState(), this)) {
                 return this;
             } else {
@@ -111,7 +111,7 @@ public enum DuckState implements State{
         }
     };
 
-    abstract DuckState setDuckState(DuckState duckState) throws CannotProccedNewState;
+    public abstract DuckState setDuckState(DuckState duckState) throws CannotProccedNewState;
 
     abstract EnumSet<DuckState> possibleState();
 
