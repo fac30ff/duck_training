@@ -1,12 +1,28 @@
 package com.globallogic.training.ducker.pojo;
 
-public class Duck {
+import com.globallogic.training.ducker.pojo.decorator.DuckInterface;
+import com.globallogic.training.ducker.pojo.state.DuckState;
+
+public class Duck implements Cloneable, DuckInterface {
     private long duckId;
     private int age;
     private String color;
     private String name;
     private double weight;
     private double wingsLength;
+    private DuckState duckState = DuckState.Standing;
+
+    public long getDuckId() {
+        return duckId;
+    }
+
+    public DuckState getDuckState() {
+        return duckState;
+    }
+
+    public void setDuckState(DuckState duckState) {
+        this.duckState = duckState;
+    }
 
     public int getAge() {
         return age;
@@ -58,5 +74,15 @@ public class Duck {
                 ", weight=" + weight +
                 ", wingsLength=" + wingsLength +
                 '}';
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String info() {
+        return this.toString();
     }
 }
